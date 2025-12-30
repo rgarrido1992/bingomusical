@@ -329,6 +329,9 @@ function updateTimestamp() {
 function generateFirstCard() {
     gameState.currentCard = generateCard();
 
+    // Activar modo juego (ocultar logo y copyright)
+    document.body.classList.add('game-active');
+
     // Cambiar de pantalla
     elements.startScreen.classList.add('hidden');
     elements.gameScreen.classList.remove('hidden');

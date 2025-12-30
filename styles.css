@@ -278,7 +278,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
     max-height: 100%;
 }
 
@@ -404,14 +404,14 @@ main {
 
 /* ===== Timestamp ===== */
 .timestamp {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--christmas-gold);
     text-shadow: 1px 1px 3px var(--shadow-dark);
-    padding: 0.5rem 1rem;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
+    padding: 0.3rem 0.8rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
     font-style: italic;
-    margin-top: 0.3rem;
+    margin-top: 0.2rem;
 }
 
 /* ===== Modals ===== */
@@ -442,14 +442,17 @@ main {
 
 .modal-content {
     background: linear-gradient(145deg, #2d5a27, #1a472a);
-    padding: 2.5rem 4rem;
-    border-radius: 30px;
+    padding: 1.5rem 2.5rem;
+    border-radius: 25px;
     text-align: center;
     box-shadow:
         0 20px 60px var(--shadow-dark),
         inset 0 2px 4px rgba(255, 255, 255, 0.1);
     border: 3px solid var(--christmas-gold);
     animation: popIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    max-height: 90vh;
+    max-width: 90vw;
+    overflow: auto;
 }
 
 @keyframes popIn {
@@ -465,18 +468,18 @@ main {
 }
 
 .modal-content h2 {
-    font-size: 4rem;
+    font-size: clamp(2rem, 8vw, 3.5rem);
     font-weight: 800;
     color: var(--christmas-gold);
     text-shadow:
         3px 3px 0 var(--christmas-red-dark),
         6px 6px 15px var(--shadow-dark);
-    margin: 1rem 0;
+    margin: 0.5rem 0;
     letter-spacing: 0.1em;
 }
 
 .confetti {
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
     animation: confettiPop 0.6s ease-out;
 }
 
@@ -491,22 +494,22 @@ main {
 }
 
 .modal-decoration {
-    font-size: 2rem;
-    margin: 1rem 0;
-    letter-spacing: 0.5rem;
+    font-size: clamp(1rem, 4vw, 1.8rem);
+    margin: 0.5rem 0;
+    letter-spacing: 0.3rem;
 }
 
 .btn-modal {
     background: linear-gradient(145deg, var(--christmas-gold), var(--christmas-gold-dark));
     color: var(--christmas-red-dark);
     border: none;
-    padding: 1rem 3rem;
-    font-size: 1.3rem;
+    padding: 0.8rem 2rem;
+    font-size: clamp(1rem, 3vw, 1.2rem);
     font-weight: 700;
     font-family: 'Outfit', sans-serif;
     border-radius: 50px;
     cursor: pointer;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     box-shadow: 0 4px 15px var(--shadow-dark);
     transition: all 0.3s ease;
 }

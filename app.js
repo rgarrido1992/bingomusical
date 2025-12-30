@@ -277,42 +277,21 @@ function closeLineModal() {
 }
 
 /**
- * Cierra el modal de bingo y bloquea las casillas
+ * Cierra el modal de bingo - permite seguir jugando para corregir errores
  */
 function closeBingoModal() {
     elements.bingoModal.classList.add('hidden');
-    gameState.isLocked = true;
 
-    // Añadir clase locked a todas las celdas
-    const cells = elements.bingoGrid.querySelectorAll('.bingo-cell');
-    cells.forEach(cell => cell.classList.add('locked'));
-
+    // NO bloquear casillas - permitir corregir errores
     // Mostrar botón de nueva partida
     elements.newGameBtn.classList.remove('hidden');
 }
 
 /**
- * Inicia una nueva partida
+ * Inicia una nueva partida recargando la página
  */
 function startNewGame() {
-    // Resetear estado
-    gameState = {
-        currentCard: generateCard(),
-        markedCells: [],
-        lineAnnounced: false,
-        bingoAnnounced: false,
-        isLocked: false,
-        pendingUnmarkIndex: null
-    };
-
-    // Ocultar botón de nueva partida
-    elements.newGameBtn.classList.add('hidden');
-
-    // Renderizar nueva papeleta
-    renderCard();
-
-    // Actualizar timestamp
-    updateTimestamp();
+    location.reload();
 }
 
 /**

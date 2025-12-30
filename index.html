@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🎄 Bingo Musical Navideño 🎄</title>
+    <meta name="description" content="Juega al bingo musical navideño con tus canciones favoritas de Navidad">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Copos de nieve animados -->
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+    </div>
+
+    <!-- Mensaje de orientación -->
+    <div id="orientation-overlay">
+        <div class="orientation-content">
+            <div class="phone-icon">📱</div>
+            <div class="rotate-arrow">↻</div>
+            <h2>Gira tu dispositivo</h2>
+            <p>Para jugar al Bingo Musical, pon tu dispositivo en horizontal</p>
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div id="app">
+        <header>
+            <img src="https://i.postimg.cc/vM0bs22c/Sin-titulo-1.png" alt="Bingo Musical Navideño" class="logo">
+        </header>
+
+        <main>
+            <!-- Pantalla inicial -->
+            <div id="start-screen">
+                <div class="decorations">
+                    <span>🎅</span>
+                    <span>⭐</span>
+                    <span>🎁</span>
+                    <span>🔔</span>
+                    <span>❄️</span>
+                </div>
+                <button id="generate-btn" class="btn-generate">
+                    <span class="btn-icon">🎲</span>
+                    Generar Papeleta
+                </button>
+                <div class="decorations" style="margin-top: 2rem;">
+                    <span>🦌</span>
+                    <span>🎄</span>
+                    <span>⛄</span>
+                    <span>🕯️</span>
+                    <span>🌟</span>
+                </div>
+            </div>
+
+            <!-- Pantalla del juego -->
+            <div id="game-screen" class="hidden">
+                <div class="game-container">
+                    <div id="bingo-grid" class="bingo-grid">
+                        <!-- Las celdas se generan dinámicamente -->
+                    </div>
+                    <div id="timestamp" class="timestamp"></div>
+                    <button id="new-game-btn" class="btn-new-game hidden">
+                        🔄 Empezar otra partida
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal de LINEA -->
+    <div id="line-modal" class="modal hidden">
+        <div class="modal-content modal-line">
+            <div class="confetti">🎉</div>
+            <h2>¡LINEA!</h2>
+            <div class="modal-decoration">🎵 🎶 🎵</div>
+            <button id="line-accept-btn" class="btn-modal">Aceptar</button>
+        </div>
+    </div>
+
+    <!-- Modal de BINGO -->
+    <div id="bingo-modal" class="modal hidden">
+        <div class="modal-content modal-bingo">
+            <div class="confetti">🎊</div>
+            <h2>¡BINGO!</h2>
+            <div class="modal-decoration">🎄 🎅 🎁 ⭐ 🔔</div>
+            <button id="bingo-review-btn" class="btn-modal">Revisar</button>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmación para desmarcar -->
+    <div id="confirm-modal" class="modal hidden">
+        <div class="modal-content modal-confirm">
+            <div class="confirm-icon">🤔</div>
+            <h3>¿Deseas desmarcar esta canción?</h3>
+            <div class="confirm-buttons">
+                <button id="confirm-yes-btn" class="btn-confirm btn-yes">Sí</button>
+                <button id="confirm-no-btn" class="btn-confirm btn-no">No</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+
+    <!-- Footer con copyright -->
+    <footer class="copyright">
+        © Aplicación web creada por Ricardo Garrido Ruiz
+    </footer>
+</body>
+
+</html>
